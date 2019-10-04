@@ -156,8 +156,8 @@ def custom_pop(input_list):
 
     """
     removed_item = input_list[-1]
-    new_list = input_list[:-1]
-    input_list = new_list
+    input_list[:] = input_list[:-1]
+
 
     return removed_item
 
@@ -248,8 +248,8 @@ def custom_contains(input_list, value):
     for item in input_list:
         if item == value:
             return True
-        else:
-            return False
+
+    return False
 
 
 def custom_equality(some_list, another_list):
@@ -280,7 +280,7 @@ def custom_equality(some_list, another_list):
             return False
         
         counter += 1
-        
+
     return True    
 ##############################################################################
 # Please ask for a code review. Also, give your partner a high-five!
