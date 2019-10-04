@@ -158,7 +158,7 @@ def custom_pop(input_list):
     removed_item = input_list[-1]
     new_list = input_list[:-1]
     input_list = new_list
-    
+
     return removed_item
 
 
@@ -175,8 +175,14 @@ def custom_index(input_list, value):
 
     """
 
+    counter = 0
 
-    return 0
+    for item in input_list:
+        if item == value:
+            break
+        counter += 1
+
+    return counter
 
 
 def custom_count(input_list, value):
