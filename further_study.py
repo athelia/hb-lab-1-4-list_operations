@@ -245,7 +245,11 @@ def custom_contains(input_list, value):
 
     """
 
-    return None
+    for item in input_list:
+        if item == value:
+            return True
+        else:
+            return False
 
 
 def custom_equality(some_list, another_list):
@@ -264,9 +268,20 @@ def custom_equality(some_list, another_list):
 
     """
 
-    return None
+    counter = 0
+    len_some_list = custom_len(some_list)
+    len_another_list = custom_len(another_list)
 
+    if len_another_list != len_some_list:
+        return False
 
+    for item in some_list:
+        if some_list[counter] != another_list[counter]:
+            return False
+        
+        counter += 1
+        
+    return True    
 ##############################################################################
 # Please ask for a code review. Also, give your partner a high-five!
 ##############################################################################
